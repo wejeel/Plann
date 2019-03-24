@@ -1,0 +1,49 @@
+<p id="notice"><%= notice %></p>
+
+  <strong>Date:</strong>
+  <%= @receipt.date %>
+</p>
+
+<p>
+  <strong>Total:</strong>
+  <%= @receipt.total %>
+</p>
+
+<p>
+  <strong>Shopname:</strong>
+  <%= @receipt.shopName %>
+</p>
+
+<p>
+  <strong>Shopadress:</strong>
+  <%= @receipt.shopAdress %>
+</p>
+
+  <%= image_tag(@receipt.image) %>
+<p>
+  
+<b>Product(s) details:</b>
+
+<table style="width:40%">
+  <tr>
+    <th>Quantity</th>
+    <th>Product</th> 
+    <th>Category</th>
+    <th>Unit Price </th>
+    <th>Total</th>
+  </tr>
+  <% @receipt.products.each do |product| %>
+    <tr>
+      <td><%= product.quantity %></td>
+      <td><%= product.productName %></td>
+      <td><%= product.category %></td>
+      <td><%= product.unitPrice %></td>
+      <td><%= product.totalPrice %></td>
+      <td><%= link_to 'Edit', edit_receipt_product_path(@receipt, product)%></td>
+    </tr>
+  <% end %>
+ 
+</table>
+<%= link_to 'Add  New Product', new_receipt_product_path(@receipt)%></td>
+<%= link_to 'Edit Receipt', edit_receipt_path(@receipt) %> |
+<%= link_to 'Back', receipts_path %>

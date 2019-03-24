@@ -1,0 +1,13 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  date: MyString
+  total: 9.99
+  shopName: MyString
+  shopAdress: MyString
+
+two:
+  date: MyString
+  total: 9.99
+  shopName: MyString
+  shopAdress: MyString
