@@ -11,32 +11,36 @@
     </div>
   <% end %>
 
-  <div class="field">
-    <%= form.label :date %>
-    <%= form.text_field :date %>
+  <div class="field form-group">
+    <%= form.label :'Receipt date' %>
+    <%= form.text_field :date, class: 'form-control' %>
   </div>
 
-  <div class="field">
+  <div class="field form-group">
     <%= form.label :total %>
-    <%= form.text_field :total %>
+    <%= form.text_field :total, class: 'form-control' %>
   </div>
 
-  <div class="field">
-    <%= form.label :shopName %>
-    <%= form.text_field :shopName %>
+  <div class="field form-group">
+    <%= form.label :'Shop name' %>
+    <%= form.text_field :shopName, class: 'form-control' %>
   </div>
 
-  <div class="field">
-    <%= form.label :'Shop Adress' %>
-    <%= form.text_field :shopAdress %>
+  <div class="field form-group">
+    <%= form.label :'Shop Address' %>
+    <%= form.text_field :shopAdress, class: 'form-control' %>
   </div>
   
-  <div class="field">
+      <div class="field form-group">
     <%= form.label :'Upload Receipt' %>
     <%= form.file_field :image %>
   </div>
-
-  <div class="actions">
-    <%= form.submit %>
+  
+    <div class="actions form-group">
+    <%= form.submit 'Create receipt', class: 'btn btn-success' %>
   </div>
+
+ <small id="emailHelp" class="form-text text-muted">Expensease helps you save smarter</small>
+
+
 <% end %>

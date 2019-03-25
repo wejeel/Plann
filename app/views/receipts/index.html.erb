@@ -1,14 +1,46 @@
 <p id="notice"><%= notice %></p>
 
-<h1>Receipts</h1>
+<nav class="navbar navbar-expand-lg navbar-dark bg-primary">
+    
+  <a class="navbar-brand" href="#">Expensease</a>
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+  <div class="collapse navbar-collapse" id="navbarNavDropdown">
+    <ul class="navbar-nav">
+      <li class="nav-item active">
+        <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
+      </li>
+      <li class="nav-item">
+    <a><%=link_to "Login", new_user_session_path, class: 'nav-link' %> </a>
+      </li>
+      <li class="nav-item">
+        <!--<a class="nav-link" href="#">Pricing</a>-->
+         <a> <%=link_to "Sign Up", new_user_registration_path, class: 'nav-link' %> </a>
+      </li>
+   
+    </ul>
+  </div>
+</nav>
 
-<table style="width:40%">
+<center style="margin-top:35px">
+    <div class="row">
+        <div class="col-md-1"></div>
+        <div class="col-md-10">
+            
+<h1><b>Receipts</b></h1>
+<br>
+
+<table style="width:100%" class="table">
+    <thead class="thead-dark">
   <tr>
     <th>Date</th>
     <th>Total</th>
-    <th>Shop Name</th>
-    <th>Shop Address</th>
+    <th>Store name</th>
+    <th>Store address</th>
+    <th>Actions</th>
   </tr>
+  </thead>
   <tbody>
     <% @receipts.each do |receipt| %>
       <tr>
@@ -16,9 +48,10 @@
         <td><%= receipt.total %></td>
         <td><%= receipt.shopName %></td>
         <td><%= receipt.shopAdress %></td>
-        <td><%= link_to 'Show', receipt %></td>
-        <td><%= link_to 'Edit', edit_receipt_path(receipt) %></td>
-        <td><%= link_to 'Destroy', receipt, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        
+        <td><%= link_to 'Show', receipt %> <%= link_to 'Edit', edit_receipt_path(receipt) %> <%= link_to 'Destroy', receipt, method: :delete, data: { confirm: 'Are you sure?' } %> </td>
+        <!--<td></td>-->
+        <!--<td>/td>-->
       </tr>
     <% end %>
   </tbody> 
@@ -28,4 +61,15 @@
 <br>
 
 <%= link_to 'New Receipt', new_receipt_path %>
+    
+        </div>
+        <div class="col-md-1"></div>
+        
+    </div>
+    
+
+</center>
+
+
+
 
