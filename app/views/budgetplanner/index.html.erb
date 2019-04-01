@@ -1,0 +1,105 @@
+<nav class="navbar navbar-expand-lg navbar-dark bg-primary">
+    
+  <a class="navbar-brand" href="#">Expensease</a>
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+  <div class="collapse navbar-collapse" id="navbarNavDropdown">
+    <ul class="navbar-nav">
+   
+      <li class="nav-item">
+        <% if user_signed_in? %>
+        
+         <li class="nav-item">
+        
+        <a><%=link_to  "Home", new_user_session_path, class: 'nav-link' %> </a>
+        </li>
+        
+         <li class="nav-item">
+        <a class="nav-link" href="#">Budget Planner <span class="sr-only active">(current)</span></a>
+      </li>
+        
+        <li class="nav-item">
+        
+        <a><%=link_to  current_user.email, new_user_session_path, class: 'nav-link' %> </a>
+        </li>
+        
+        <li class="nav-item">
+          
+        <a><%=link_to "Sign out", destroy_user_session_path, class: 'nav-link' %> </a>
+        
+        </li>
+        <% else %>
+        
+        <li class="nav-item">
+        
+           <a><%=link_to "Login", new_user_session_path, class: 'nav-link' %> </a>
+      </li>
+      <li class="nav-item">
+        <!--<a class="nav-link" href="#">Pricing</a>-->
+         <a> <%=link_to "Sign Up", new_user_registration_path, class: 'nav-link' %> </a>
+      </li>
+        <% end %>
+        
+          
+   
+    </ul>
+  </div>
+</nav>
+
+    <%= form_for(budgetlists) do |f| %>   
+      <% if budgetlists.errors.any? %>   
+        <div id="error_explanation">   
+          <h2><%= pluralize(budgetlists.errors.count, "error") %> prohibited this user from being saved:</h2>   
+      
+          <ul>   
+          <% budgetlists.errors.full_messages.each do |message| %>   
+            <li><%= message %></li>   
+          <% end %>   
+          </ul>   
+        </div>   
+      <% end %>   
+      
+      <div class="field">   
+        <%= f.label :name %>   
+        <%= f.text_field :name %>   
+      </div>   
+      
+      <div class="field">   
+        <%= f.label :password %>   
+        <%= f.password_field :password %>   
+      </div>   
+      
+      <div class="field">   
+        <%= f.label :password_confirmation %>   
+        <%= f.password_field :password_confirmation %>   
+      </div>   
+      
+      <div class="actions">   
+        <%= f.submit %>   
+      </div>   
+    <% end %>   
+
+
+
+<!--<div class="row">-->
+    
+<!--    <div class="col-md-2"></div>-->
+<!--      <div class="col-md-8">-->
+<!--          <div style="margin:20px">-->
+<!--              <br><br>-->
+<!--              <center>-->
+<!--             <h2><b>How much would you like to budget ?</b></h2>-->
+             
+<!--              <%= form_tag "/sum" do %>-->
+<!--              <%= text_field_tag :number1 %>-->
+<!--              <%= submit_tag "Submit" %>-->
+<!--              <% end %>-->
+<!--         </center> -->
+<!--          </div>-->
+        
+          
+<!--      </div>-->
+<!--         <div class="col-md-2"></div>-->
+ 
+<!--</div>-->
