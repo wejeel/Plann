@@ -20,6 +20,7 @@ gem 'google-cloud-storage'
 gem 'dotenv'
 gem 'google-cloud-vision'
 gem 'devise', '~> 4.2'
+gem "bootstrap_form", ">= 4.2.0"
 
 # Use CoffeeScript for .coffee assets and views
 gem 'coffee-rails', '~> 4.2'
