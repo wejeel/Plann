@@ -17,7 +17,7 @@
       
       <li class="nav-item">
         <% if user_signed_in? %>
-        <a><%=link_to "Login", current_user.email, new_user_session_path, class: 'nav-link' %> </a>
+        <a><%=link_to current_user.email, new_user_session_path, class: 'nav-link' %> </a>
         <a><%=link_to "Sign out", destroy_user_session_path, class: 'nav-link' %> </a>
         <% else %>
            <a><%=link_to "Login", new_user_session_path, class: 'nav-link' %> </a>

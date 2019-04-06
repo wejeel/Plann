@@ -14,7 +14,7 @@
    
      <li class="nav-item">
        <!--<a class="nav-link" href="#">Budget planner</a> -->
-       <a><%=link_to "Budget planner", budgetplanner_index_path, class: 'nav-link' %> </a>
+       <a><%=link_to "Budget planner", budgetplanner_path, class: 'nav-link' %> </a>
       </li>
    
    
@@ -40,10 +40,23 @@
 </nav>
 
 <center style="margin-top:35px">
-    <div class="row">
-        <div class="col-md-1"></div>
-        <div class="col-md-10">
-            
+    <div class="row" style="margin:15px">
+        <div class="col-md-3">
+
+
+<div class="panel panel-default">
+  <div class="panel-body">
+      <p>Your monthly budget : <b>$1000</b></p>       
+      <p>Amount spent so far : <b>$453</b></p> 
+      <p>Savings on budget so far : <b>$547</b></p> 
+      <p>Savings on budget so far in percentage : <b>23%</b></p> 
+      </div>
+      
+      
+</div>
+           
+        </div>
+        <div class="col-md-9">
 <h1><b>Receipts</b></h1>
 <br>
 
@@ -79,7 +92,6 @@
 <%= link_to 'New Receipt', new_receipt_path %>
     
         </div>
-        <div class="col-md-1"></div>
         
     </div>
     

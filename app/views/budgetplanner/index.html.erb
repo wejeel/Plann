@@ -16,12 +16,12 @@
         </li>
         
          <li class="nav-item">
-        <a class="nav-link" href="#">Budget Planner <span class="sr-only active">(current)</span></a>
+        <a class="nav-link active" href="#">Budget Planner</a>
       </li>
         
         <li class="nav-item">
         
-        <a><%=link_to  current_user.email, new_user_session_path, class: 'nav-link' %> </a>
+        <a><%=link_to  current_user.email, edit_user_registration_path, class: 'nav-link ' %> </a>
         </li>
         
         <li class="nav-item">
@@ -46,60 +46,43 @@
     </ul>
   </div>
 </nav>
-
-    <%= form_for(budgetlists) do |f| %>   
-      <% if budgetlists.errors.any? %>   
-        <div id="error_explanation">   
-          <h2><%= pluralize(budgetlists.errors.count, "error") %> prohibited this user from being saved:</h2>   
-      
-          <ul>   
-          <% budgetlists.errors.full_messages.each do |message| %>   
-            <li><%= message %></li>   
-          <% end %>   
-          </ul>   
-        </div>   
-      <% end %>   
-      
-      <div class="field">   
-        <%= f.label :name %>   
-        <%= f.text_field :name %>   
-      </div>   
-      
-      <div class="field">   
-        <%= f.label :password %>   
-        <%= f.password_field :password %>   
-      </div>   
-      
-      <div class="field">   
-        <%= f.label :password_confirmation %>   
-        <%= f.password_field :password_confirmation %>   
-      </div>   
-      
-      <div class="actions">   
-        <%= f.submit %>   
-      </div>   
-    <% end %>   
-
-
-
-<!--<div class="row">-->
-    
-<!--    <div class="col-md-2"></div>-->
-<!--      <div class="col-md-8">-->
-<!--          <div style="margin:20px">-->
-<!--              <br><br>-->
-<!--              <center>-->
-<!--             <h2><b>How much would you like to budget ?</b></h2>-->
-             
-<!--              <%= form_tag "/sum" do %>-->
-<!--              <%= text_field_tag :number1 %>-->
-<!--              <%= submit_tag "Submit" %>-->
-<!--              <% end %>-->
-<!--         </center> -->
-<!--          </div>-->
-        
+   
+  <div class="row" style="margin-top:20px">
+        <div class="col-md-4"></div>
+        <div class="col-md-4">
+          <center> <h2>Expensease budget planner</h2> 
+          <br><br>
           
-<!--      </div>-->
-<!--         <div class="col-md-2"></div>-->
- 
-<!--</div>-->
+ <small id="emailHelp" class="form-text text-muted">Give your budget a name <i>(ex. budget for a new phone)</i></small>
+  <br>
+<%= form_with model: @budgetlist, local: true do |form| %>
+ <%= form.text_field :budgetname, class: 'form-control' %>
+ <br>
+  <small id="emailHelp" class="form-text text-muted">Set your savings target amount below <i>(ex. 1000)</i></small>
+  <br>
+  <%= form.text_field :budgetamount, class: 'form-control' %>
+  <br>
+  <small id="emailHelp" class="form-text text-muted">Set your savings type</small>
+  
+  <br>
+  
+  <%= form.select :savings_type, [['Aggresive','aggresive'],['Medium','medium'],['Low','low']] %>
+  
+  <br><br>
+  
+ <%= form.submit "Create budget", class: 'btn btn-success' %>
+<% end %>
+          
+          
+          
+          
+
+
+ <small id="emailHelp" class="form-text text-muted">Expensease helps you save smarter</small>
+         
+         </center>
+        </div>
+      
+        <div class="col-md-4"></div>
+        
+    </div>

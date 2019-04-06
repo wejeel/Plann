@@ -12,12 +12,12 @@
         
         <li class="nav-item">
         
-        <a><%=link_to  current_user.email, new_user_session_path, class: 'nav-link' %> </a>
+        <a><%=link_to  current_user.email, edit_user_registration_path, class: 'nav-link' %> </a>
         </li>
         
         <li class="nav-item">
           
-        <a><%=link_to "Sign out", destroy_user_session_path, class: 'nav-link' %> </a>
+        <a><%=link_to "Sign out", destroy_user_session_path,  :method => :delete, class: 'nav-link' %> </a>
         
         </li>
         <% else %>
@@ -49,13 +49,24 @@
           <div class="jumbotron">
               <h1>Welcome to expensease!</h1>
               <br>
-              <p>Expensease helps you track your receipts and plan your budget.</p>
-              
+              <p></p>
+               <small id="emailHelp" class="form-text text-muted">Expensease helps you track your receipts and plan your budget.</small>
+              <br>
+               <% if user_signed_in? %>
+                <div class="actions form-group">
+                   <a> <%=link_to "View my receipts", receipts_path, class: 'btn btn-success' %> </a>
+                </div>
+               
+               
+               <% else %>
                 <div class="actions form-group">
                    <a> <%=link_to "Create a new account", new_user_registration_path, class: 'btn btn-success' %> </a>
-                   
-                
                 </div>
+              
+              <% end %>
+               
+               
+               
           </div>
           
       </div>
@@ -63,3 +74,5 @@
 
     
 </div>
+
+
