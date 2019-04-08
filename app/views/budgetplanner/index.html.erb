@@ -1,0 +1,88 @@
+<nav class="navbar navbar-expand-lg navbar-dark bg-primary">
+    
+  <a class="navbar-brand" href="#">Expensease</a>
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+  <div class="collapse navbar-collapse" id="navbarNavDropdown">
+    <ul class="navbar-nav">
+   
+      <li class="nav-item">
+        <% if user_signed_in? %>
+        
+         <li class="nav-item">
+        
+        <a><%=link_to  "Home", new_user_session_path, class: 'nav-link' %> </a>
+        </li>
+        
+         <li class="nav-item">
+        <a class="nav-link active" href="#">Budget Planner</a>
+      </li>
+        
+        <li class="nav-item">
+        
+        <a><%=link_to  current_user.email, edit_user_registration_path, class: 'nav-link ' %> </a>
+        </li>
+        
+        <li class="nav-item">
+          
+        <a><%=link_to "Sign out", destroy_user_session_path, class: 'nav-link' %> </a>
+        
+        </li>
+        <% else %>
+        
+        <li class="nav-item">
+        
+           <a><%=link_to "Login", new_user_session_path, class: 'nav-link' %> </a>
+      </li>
+      <li class="nav-item">
+        <!--<a class="nav-link" href="#">Pricing</a>-->
+         <a> <%=link_to "Sign Up", new_user_registration_path, class: 'nav-link' %> </a>
+      </li>
+        <% end %>
+        
+          
+   
+    </ul>
+  </div>
+</nav>
+   
+  <div class="row" style="margin-top:20px">
+        <div class="col-md-4"></div>
+        <div class="col-md-4">
+          <center> <h2>Expensease budget planner</h2> 
+          <br><br>
+          
+ <small id="emailHelp" class="form-text text-muted">Give your budget a name <i>(ex. budget for a new phone)</i></small>
+  <br>
+<%= form_with model: @budgetlist, local: true do |form| %>
+ <%= form.text_field :budgetname, class: 'form-control' %>
+ <br>
+  <small id="emailHelp" class="form-text text-muted">Set your savings target amount below <i>(ex. 1000)</i></small>
+  <br>
+  <%= form.text_field :budgetamount, class: 'form-control' %>
+  <br>
+  <small id="emailHelp" class="form-text text-muted">Set your savings type</small>
+  
+  <br>
+  
+  <%= form.select :savings_type, [['Aggresive','aggresive'],['Medium','medium'],['Low','low']] %>
+  
+  <br><br>
+  
+ <%= form.submit "Create budget", class: 'btn btn-success' %>
+<% end %>
+          
+          
+          
+          
+
+
+ <small id="emailHelp" class="form-text text-muted">Expensease helps you save smarter</small>
+         
+         </center>
+        </div>
+      
+        <div class="col-md-4"></div>
+        
+    </div>
