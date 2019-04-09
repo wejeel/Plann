@@ -27,6 +27,7 @@ class ProductsController < ApplicationController
   end
 
   def edit
+    @user = User.find(current_user.id)
     @receipt = Receipt.find(params[:receipt_id])
     @product = @receipt.products.find(params[:id])
   end
