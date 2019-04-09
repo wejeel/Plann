@@ -17,6 +17,10 @@ Rails.application.routes.draw do
   get 'products/new'
   get 'products/edit'
   
+  resources :users do
+    resources :receipts
+  end
+  
   resources :receipts do
     resources:products
   end

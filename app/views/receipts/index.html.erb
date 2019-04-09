@@ -71,14 +71,14 @@
   </tr>
   </thead>
   <tbody>
-    <% @receipts.each do |receipt| %>
+    <% for receipt in @receipts %>
       <tr>
         <td><%= receipt.date %></td>
         <td><%= receipt.total %></td>
         <td><%= receipt.shopName %></td>
         <td><%= receipt.shopAdress %></td>
         
-        <td><%= link_to 'Show', receipt %> <%= link_to 'Edit', edit_receipt_path(receipt) %> <%= link_to 'Destroy', receipt, method: :delete, data: { confirm: 'Are you sure?' } %> </td>
+        <td><%= link_to 'Show', user_receipt_path(@user, receipt) %> <%= link_to 'Edit', edit_user_receipt_path(@user, receipt) %> <%= link_to 'Destroy', user_receipts_path(@user, receipt), :confirm => 'Are you sure?', :method => :delete %></td> </td>
         <!--<td></td>-->
         <!--<td>/td>-->
       </tr>
@@ -89,7 +89,7 @@
 
 <br>
 
-<%= link_to 'New Receipt', new_receipt_path %>
+<%= link_to 'New Receipt', new_user_receipt_path(@user) %>
     
         </div>
         

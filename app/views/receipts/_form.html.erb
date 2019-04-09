@@ -1,5 +1,5 @@
-<%= form_with(model: receipt, local: true) do |form| %>
-  <% if receipt.errors.any? %>
+<%= form_for([@user, @receipt]) do |form| %>
+<% if @receipt.errors.any? %>
     <div id="error_explanation">
       <h2><%= pluralize(receipt.errors.count, "error") %> prohibited this receipt from being saved:</h2>
 

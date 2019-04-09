@@ -29,8 +29,8 @@
             
      <h1><b>Add new Receipt</b></h1>
     <hr>
-    <%= render 'form', receipt: @receipt %>
-    <%= link_to 'Back', receipts_path %>  
+    <%= render 'form' %>
+    <%= link_to 'Back', user_receipts_path(@user) %>  
             
         </div>
         <div class="col-md-4"></div>
