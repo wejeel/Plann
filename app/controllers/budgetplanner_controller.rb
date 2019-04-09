@@ -1,7 +1,29 @@
 class BudgetplannerController < ApplicationController
   
+require 'budgetGenerator'
+   
 def index
+    @receipt = Receipt.new
 end
+
+def generateBudget
+@budgetname = params[:budgetname]
+@budgetamount = params[:budgetamount]
+
+@budget = BasicBudget.new(@budgetamount)
+@budget = LowSavings.new(budget)
+
+@ans = @budget.generate_budget
+
+@result = "there is something" + @ans.to_s
+
+
+    if @ans.nil?
+      @result = "nothing dey oh!!" + @ans
+    end
+
+end
+
 
 # def create
 #   @budget = Budgetplanner.new(budget_params)   
