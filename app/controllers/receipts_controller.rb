@@ -11,7 +11,7 @@ class ReceiptsController < ApplicationController
     
     @dept = @mybudget.budget_amount
     @savings_type = @mybudget.savings_type
-    @budget_spent = @mybudget.budget_spent
+    #@budget_spent = @mybudget.budget_spent
     
     if @budget_spent.nil?
       @budget_spent = 0.00
