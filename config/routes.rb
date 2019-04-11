@@ -9,8 +9,10 @@ Rails.application.routes.draw do
   devise_for :users
     
   get 'budgetplanner' => "budgetplanner#index"
-  
-  
+  get 'loaddata'      => "load_data#get_data_from_api"
+  get 'loaddata/index'=> "load_data#index"
+  get 'loaddata/uploadfile'=> "load_data#uploadfile"
+
   
   get 'products/index'
   get 'products/show'

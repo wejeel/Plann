@@ -21,7 +21,7 @@ gem 'dotenv'
 gem 'google-cloud-vision'
 gem 'devise', '~> 4.2'
 gem "bootstrap_form", ">= 4.2.0"
-
+gem "receipt_data_extraction"
 # Use CoffeeScript for .coffee assets and views
 gem 'coffee-rails', '~> 4.2'
 # Turbolinks makes navigating your web application faster. Read more: https://github.com/turbolinks/turbolinks
