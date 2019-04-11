@@ -7,8 +7,7 @@ class ReceiptsController < ApplicationController
     @user = User.find(params[:user_id])
     @receipts = @user.receipts
     
-     @mybudget = Userbudget.find_by user_id: current_user.email
-    
+    @mybudget = Userbudget.find_by user_id: current_user.email
     @dept = @mybudget.budget_amount
     @savings_type = @mybudget.savings_type
     #@budget_spent = @mybudget.budget_spent
@@ -16,7 +15,6 @@ class ReceiptsController < ApplicationController
     if @budget_spent.nil?
       @budget_spent = 0.00
     end
-    
   end
 
   # GET /receipts/1
@@ -74,7 +72,7 @@ class ReceiptsController < ApplicationController
       format.xml { head :ok }
     end
   end
-
+  
   private
     # Use callbacks to share common setup or constraints between actions.
     def set_receipt
