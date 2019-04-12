@@ -54,7 +54,7 @@ class ReceiptsController < ApplicationController
   def update
     @user = User.find(params[:user_id])
     @receipt = Receipt.find(params[:id])
-    if @receipt.update_attributes(params.require(:receipt).permit(:date, :total, :shopName, :shopAdress, :image))
+    if @receipt.update_attributes(params.require(:receipt).permit(:date, :total, :shopName, :shopAdress))
       redirect_to user_receipt_url(@user, @receipt)
       else
       render :action => "edit"
@@ -81,6 +81,6 @@ class ReceiptsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def receipt_params
-      params.require(:receipt).permit(:date, :total, :shopName, :shopAdress, :image)
+      params.require(:receipt).permit(:date, :total, :shopName, :shopAdress)
     end
 end
