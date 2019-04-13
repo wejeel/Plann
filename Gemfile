@@ -22,13 +22,18 @@ gem 'google-cloud-vision'
 gem 'devise', '~> 4.2'
 gem "bootstrap_form", ">= 4.2.0"
 
-gem "receipt_data_extraction"
+#gem "receipt_data_extraction"
 # Use CoffeeScript for .coffee assets and views
 gem 'coffee-rails', '~> 4.2'
 # Turbolinks makes navigating your web application faster. Read more: https://github.com/turbolinks/turbolinks
 gem 'turbolinks', '~> 5'
 # Build JSON APIs with ease. Read more: https://github.com/rails/jbuilder
 gem 'jbuilder', '~> 2.5'
+
+gem 'budgetGenerator'
+
+
+
 # Use Redis adapter to run Action Cable in production
 # gem 'redis', '~> 4.0'
 # Use ActiveModel has_secure_password

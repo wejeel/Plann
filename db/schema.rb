@@ -10,11 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-<<<<<<< HEAD
-ActiveRecord::Schema.define(version: 2019_04_10_225726) do
-=======
 ActiveRecord::Schema.define(version: 2019_04_12_132455) do
->>>>>>> 8bb5313dcc190f1c17272fd898769a0bcd046026
 
   create_table "active_storage_attachments", force: :cascade do |t|
     t.string "name", null: false
@@ -82,19 +78,15 @@ ActiveRecord::Schema.define(version: 2019_04_12_132455) do
     t.index ["user_id"], name: "index_receipts_on_user_id"
   end
 
-<<<<<<< HEAD
-=======
   create_table "uploads", force: :cascade do |t|
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
 
->>>>>>> 8bb5313dcc190f1c17272fd898769a0bcd046026
   create_table "userbudgets", force: :cascade do |t|
     t.string "user_id"
     t.string "budget_name"
     t.string "savings_type"
-<<<<<<< HEAD
     t.decimal "budget_amount"
     t.decimal "budget_spent"
     t.decimal "home_rent"
@@ -105,17 +97,6 @@ ActiveRecord::Schema.define(version: 2019_04_12_132455) do
     t.decimal "car_auto"
     t.decimal "insurance_medical"
     t.decimal "misc"
-=======
-    t.integer "budget_amount"
-    t.decimal "Home_Rent"
-    t.decimal "Utilities"
-    t.decimal "Food_Groceries"
-    t.decimal "Departmental"
-    t.decimal "Entertainment"
-    t.decimal "Car_Auto"
-    t.decimal "Insurance_Medical"
-    t.decimal "Misc"
->>>>>>> 8bb5313dcc190f1c17272fd898769a0bcd046026
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end

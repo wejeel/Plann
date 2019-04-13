@@ -5,7 +5,6 @@ class ManagebudgetController < ApplicationController
 def index
     
     
-
 @mybudget = Userbudget.find_by(user_id: current_user.email)
 
 @is_found = false
