@@ -34,7 +34,7 @@ class BasicBudget
     @budget_category_percentage = [0.30, 0.25, 0.15, 0.10, 0.04, 0.06, 0.07, 0.03]
   end
 
-  def generate_budget
+   def generate_budget
     @h = Hash.new
     @budget_category = ["Home_Rent", "Utilities", "Food_Groceries", "Departmental", "Entertainment", "Car_Auto", "Insurance_Medical", "Misc"]
     @budget_category_percentage = [0.30, 0.25, 0.15, 0.10, 0.04, 0.06, 0.07, 0.03]
@@ -46,11 +46,7 @@ class BasicBudget
     end
 
     @h
-    
-  end
-  
-  def multiply
-  @amount * 2
+
   end
 
 end
@@ -62,22 +58,22 @@ class AggressiveSavings
   end
 
   def generate_budget
-    h = Hash.new
-    aggressive_priority_savings = @basic_budget.aggressive_savings
-    var = @basic_budget.amount * aggressive_priority_savings
-    new_amount = @basic_budget.amount - var
-    savings_type_name = 'aggressive'
+    @h = Hash.new
+    @aggressive_priority_savings = @basic_budget.aggressive_savings
+    @var = @basic_budget.amount.to_f * @aggressive_priority_savings
+    @new_amount = @basic_budget.amount.to_f - @var.to_f
+    @savings_type_name = 'aggressive'
 
-    get_budget_category = @basic_budget.budget_category
-    get_budget_percentage = @basic_budget.budget_category_percentage
+    @get_budget_category = @basic_budget.budget_category
+    @get_budget_percentage = @basic_budget.budget_category_percentage
 
-    get_budget_category.each_with_index do |expense_item, expense_index|
-      percentage_for_budget_item = get_budget_percentage[expense_index]
-      calculated_budget_for_item = new_amount.to_f * percentage_for_budget_item.to_f
-      h.store("#{expense_item}".to_s, calculated_budget_for_item.to_f.round(2))
+    @get_budget_category.each_with_index do |expense_item, expense_index|
+      @percentage_for_budget_item = @get_budget_percentage[expense_index]
+      @calculated_budget_for_item = @new_amount.to_f * @percentage_for_budget_item.to_f
+      @h.store("#{expense_item}".to_s, @calculated_budget_for_item.to_f.round(2))
     end
 
-   h
+   @h
   end
 end
 
@@ -88,22 +84,22 @@ class MediumSavings
   end
 
   def generate_budget
-    h = Hash.new
-    medium_priority_savings = @basic_budget.medium_savings
-    var = @basic_budget.amount * medium_priority_savings
-    new_amount = @basic_budget.amount - var
-    savings_type_name = 'medium'
+    @h = Hash.new
+    @medium_priority_savings = @basic_budget.medium_savings
+    @var = @basic_budget.amount.to_f * @medium_priority_savings
+    @new_amount = @basic_budget.amount.to_f - @var.to_f
+    @savings_type_name = 'medium'
 
-    get_budget_category = @basic_budget.budget_category
-    get_budget_percentage = @basic_budget.budget_category_percentage
+    @get_budget_category = @basic_budget.budget_category
+    @get_budget_percentage = @basic_budget.budget_category_percentage
 
-    get_budget_category.each_with_index do |expense_item, expense_index|
-      percentage_for_budget_item = get_budget_percentage[expense_index]
-      calculated_budget_for_item = new_amount.to_f * percentage_for_budget_item.to_f
-      h.store("#{expense_item}".to_s, calculated_budget_for_item.to_f.round(2))
+    @get_budget_category.each_with_index do |expense_item, expense_index|
+      @percentage_for_budget_item = @get_budget_percentage[expense_index]
+      @calculated_budget_for_item = @new_amount.to_f * @percentage_for_budget_item.to_f
+      @h.store("#{expense_item}".to_s, @calculated_budget_for_item.to_f.round(2))
     end
 
-   h
+   @h
   end
 end
 
@@ -114,22 +110,22 @@ class LowSavings
   end
 
   def generate_budget
-    h = Hash.new
-    low_priority_savings = @basic_budget.low_savings
-    var = @basic_budget.amount * low_priority_savings
-    new_amount = @basic_budget.amount - var
-    savings_type_name = 'low'
+    @h = Hash.new
+    @low_priority_savings = @basic_budget.low_savings
+    @var = @basic_budget.amount.to_f * @low_priority_savings
+    @new_amount = @basic_budget.amount.to_f - @var.to_f
+    @savings_type_name = 'low'
 
-    get_budget_category = @basic_budget.budget_category
-    get_budget_percentage = @basic_budget.budget_category_percentage
+    @get_budget_category = @basic_budget.budget_category
+    @get_budget_percentage = @basic_budget.budget_category_percentage
 
-    get_budget_category.each_with_index do |expense_item, expense_index|
-      percentage_for_budget_item = get_budget_percentage[expense_index]
-      calculated_budget_for_item = new_amount.to_f * percentage_for_budget_item.to_f
-      h.store("#{expense_item}".to_s, calculated_budget_for_item.to_f.round(2))
+    @get_budget_category.each_with_index do |expense_item, expense_index|
+      @percentage_for_budget_item = @get_budget_percentage[expense_index]
+      @calculated_budget_for_item = @new_amount.to_f * @percentage_for_budget_item.to_f
+      @h.store("#{expense_item}".to_s, @calculated_budget_for_item.to_f.round(2))
     end
 
-   h
+   @h
   end
 end
 

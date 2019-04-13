@@ -1,17 +1,29 @@
 class ReceiptsController < ApplicationController
+   before_action :authenticate_user!
   before_action :set_receipt, only: [:show, :edit, :update, :destroy]
 
   # GET /receipts
   # GET /receipts.json
   def index
-    @user = User.find(params[:user_id])
+    
+    #uncomment after development
+    
+    @user = User.find_by(email: current_user.email)
     @receipts = @user.receipts
     
-     @mybudget = Userbudget.find_by user_id: current_user.email
+    #@user = User.find(params[:user_id])
+    #@receipts = @user.receipts
     
-    @dept = @mybudget.budget_amount
-    @savings_type = @mybudget.savings_type
+     @mybudget = Userbudget.find_by(user_id: current_user.email)
+    
+    @budget_amount = @mybudget.budget_amount
     @budget_spent = @mybudget.budget_spent
+    @savings_type = @mybudget.savings_type
+    
+    @get_percentage = (@budget_spent / @budget_amount) * 100
+
+    
+    @savings_on_budget = @budget_amount - @budget_spent
     
     if @budget_spent.nil?
       @budget_spent = 0.00
@@ -22,6 +34,8 @@ class ReceiptsController < ApplicationController
   # GET /receipts/1
   # GET /receipts/1.json
   def show
+    
+    
      @user = User.find(params[:user_id])
      @receipt = @user.receipts.find(params[:id])
   end

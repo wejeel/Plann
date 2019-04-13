@@ -9,8 +9,9 @@ Rails.application.routes.draw do
   devise_for :users
     
   get 'budgetplanner' => "budgetplanner#index"
+  get 'managebudget' => "managebudget#index"
   
-  
+ post '/generateBudget' =>"budgetplanner#generateBudget"
   
   get 'products/index'
   get 'products/show'

@@ -1,0 +1,2 @@
+class Userbudget < ApplicationRecord
+end

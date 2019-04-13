@@ -1,5 +1,7 @@
 class ProductsController < ApplicationController
   
+   before_action :authenticate_user!
+  
   # Get the recept with id=1
   def index
     @receipt = Receipt.find(params[:receipt_id])

@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_04_09_110026) do
+ActiveRecord::Schema.define(version: 2019_04_10_225726) do
 
   create_table "active_storage_attachments", force: :cascade do |t|
     t.string "name", null: false
@@ -75,6 +75,24 @@ ActiveRecord::Schema.define(version: 2019_04_09_110026) do
     t.datetime "updated_at", null: false
     t.integer "user_id"
     t.index ["user_id"], name: "index_receipts_on_user_id"
+  end
+
+  create_table "userbudgets", force: :cascade do |t|
+    t.string "user_id"
+    t.string "budget_name"
+    t.string "savings_type"
+    t.decimal "budget_amount"
+    t.decimal "budget_spent"
+    t.decimal "home_rent"
+    t.decimal "utilities"
+    t.decimal "food_groceries"
+    t.decimal "departmental"
+    t.decimal "entertainment"
+    t.decimal "car_auto"
+    t.decimal "insurance_medical"
+    t.decimal "misc"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
   end
 
   create_table "users", force: :cascade do |t|
