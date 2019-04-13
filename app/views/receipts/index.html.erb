@@ -2,21 +2,28 @@
     <div class="row" style="margin:15px">
         <div class="col-md-3">
 
-
-<div class="panel panel-default">
-  <div class="panel-body">
-      <p>Your monthly budget : <b><%= @budget_amount %></b></p>       
-      <p>Amount spent so far : <b><%= @budget_spent %></b></p> 
-      <p>Savings on budget so far : <b><%= @savings_on_budget %> (23%)</b></p> 
-      </div>
-      
-      
+<div class="card">
+  <div class="card-header">
+    Budget Overview
+  </div>
+  <div class="card-body">
+    <h5 class="card-title">Here's how you are keeping up with your budget</h5>
+    <br>
+    <p  class="card-text">Your monthly budget : <b><%= @budget_amount %></b></p>       
+      <p  class="card-text">Amount spent so far : <b><%= @budget_spent %></b></p> 
+      <p  class="card-text">Savings on budget so far : <b><%= @savings_on_budget %> (23%)</b></p> 
+  </div>
 </div>
+
            
         </div>
         <div class="col-md-9">
-<h1><b>Receipts</b></h1>
-<br>
+            
+<div class="card">
+  <div class="card-body">
+  
+<h3><b>Receipts</b></h3>
+<hr>
 
 <table style="width:100%" class="table">
     <thead class="thead-dark">
@@ -48,7 +55,10 @@
 <br>
 
 <%= link_to 'New Receipt', new_user_receipt_path(@user) %>
-    
+        
+  </div>
+</div>
+
         </div>
         
     </div>

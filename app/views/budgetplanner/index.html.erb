@@ -3,29 +3,42 @@
         <div class="col-md-4">
           <center> <h2>Expensease budget planner</h2> 
           
- <small id="emailHelp" class="form-text text-muted">Expensease helps you save smarter</small>
 
-<hr>
+<br>
   
 <%= form_tag "/generateBudget" do %>
 
+<div class="card">
+     <div class="card-header">
+     <small id="emailHelp" class="form-text text-muted">Expensease helps you save smarter</small>
+  </div>
+  
+  <div class="card-body">
+   
  <small id="emailHelp" class="form-text text-muted">Give your budget a name <i>(ex. budget for a new phone)</i></small>
   <br>
   
- <%= text_field_tag  :budgetname %>
- <br><br>
+ 
+ <%= text_field_tag :budgetname, nil, placeholder: 'My budget', class: 'form-control' %>
+ <br>
   <small id="emailHelp" class="form-text text-muted">Set your savings target amount below <i>(ex. 1000)</i></small>
   <br>
-  <%= text_field_tag :budgetamount %>
-  <br><br>
+  
+   <%= text_field_tag :budgetamount, nil, placeholder: 'My budget', class: 'form-control' %>
+   
+  <br>
   <small id="emailHelp" class="form-text text-muted">Set your savings type <i>(ex. Normal, Aggressive, Medium, and Low)</i></small>
   <br>
   
-  <%= select_tag 'savings_type', options_for_select([["Basic savings type",1],["Low savings type",2],["Medium savings type",3],["Aggressive savings type",4]]) %>
+  <%= select_tag 'savings_type', options_for_select([["Basic savings type",1],["Low savings type",2],["Medium savings type",3],["Aggressive savings type",4]]), class: 'form-control'  %>
   
   <br><br>
   
  <%= submit_tag "Create budget", class: 'btn btn-success' %>
+  </div>
+</div>
+
+
 <% end %>
  
           

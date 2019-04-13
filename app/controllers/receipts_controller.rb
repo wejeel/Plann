@@ -10,8 +10,7 @@ class ReceiptsController < ApplicationController
     
     @user = User.find_by(email: current_user.email)
     @receipts = @user.receipts
-    
-<<<<<<< HEAD
+
     #@user = User.find(params[:user_id])
     #@receipts = @user.receipts
     
@@ -25,12 +24,10 @@ class ReceiptsController < ApplicationController
 
     
     @savings_on_budget = @budget_amount - @budget_spent
-=======
     @mybudget = Userbudget.find_by user_id: current_user.email
     @dept = @mybudget.budget_amount
     @savings_type = @mybudget.savings_type
     #@budget_spent = @mybudget.budget_spent
->>>>>>> 8bb5313dcc190f1c17272fd898769a0bcd046026
     
     if @budget_spent.nil?
       @budget_spent = 0.00
