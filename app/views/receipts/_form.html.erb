@@ -30,12 +30,7 @@
     <%= form.label :'Shop Address' %>
     <%= form.text_field :shopAdress, class: 'form-control', :value => @shopAdress %>
   </div>
-  
-      <div class="field form-group">
-    <%= form.label :'Upload Receipt' %>
-    <%= form.file_field :image, :value => @image %>
-  </div>
-  
+
     <div class="actions form-group">
     <%= form.submit 'Create receipt', class: 'btn btn-success' %>
   </div>

@@ -1,5 +1,6 @@
 Rails.application.routes.draw do
   
+  resources :uploads
   root :to =>'home#index'
   # root to: 'receipts#index'
   
