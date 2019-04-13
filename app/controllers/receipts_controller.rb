@@ -11,6 +11,7 @@ class ReceiptsController < ApplicationController
     @user = User.find_by(email: current_user.email)
     @receipts = @user.receipts
     
+<<<<<<< HEAD
     #@user = User.find(params[:user_id])
     #@receipts = @user.receipts
     
@@ -24,11 +25,16 @@ class ReceiptsController < ApplicationController
 
     
     @savings_on_budget = @budget_amount - @budget_spent
+=======
+    @mybudget = Userbudget.find_by user_id: current_user.email
+    @dept = @mybudget.budget_amount
+    @savings_type = @mybudget.savings_type
+    #@budget_spent = @mybudget.budget_spent
+>>>>>>> 8bb5313dcc190f1c17272fd898769a0bcd046026
     
     if @budget_spent.nil?
       @budget_spent = 0.00
     end
-    
   end
 
   # GET /receipts/1
@@ -70,7 +76,7 @@ class ReceiptsController < ApplicationController
   def update
     @user = User.find(params[:user_id])
     @receipt = Receipt.find(params[:id])
-    if @receipt.update_attributes(params.require(:receipt).permit(:date, :total, :shopName, :shopAdress, :image))
+    if @receipt.update_attributes(params.require(:receipt).permit(:date, :total, :shopName, :shopAdress))
       redirect_to user_receipt_url(@user, @receipt)
       else
       render :action => "edit"
@@ -88,7 +94,7 @@ class ReceiptsController < ApplicationController
       format.xml { head :ok }
     end
   end
-
+  
   private
     # Use callbacks to share common setup or constraints between actions.
     def set_receipt
@@ -97,6 +103,6 @@ class ReceiptsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def receipt_params
-      params.require(:receipt).permit(:date, :total, :shopName, :shopAdress, :image)
+      params.require(:receipt).permit(:date, :total, :shopName, :shopAdress)
     end
 end

@@ -13,29 +13,24 @@
 
   <div class="field form-group">
     <%= form.label :'Receipt date' %>
-    <%= form.text_field :date, class: 'form-control' %>
+    <%= form.text_field :date, class: 'form-control', :value => @date %>
   </div>
 
   <div class="field form-group">
     <%= form.label :total %>
-    <%= form.text_field :total, class: 'form-control' %>
+    <%= form.text_field :total, class: 'form-control', :value => @total %>
   </div>
 
   <div class="field form-group">
     <%= form.label :'Shop name' %>
-    <%= form.text_field :shopName, class: 'form-control' %>
+    <%= form.text_field :shopName, class: 'form-control', :value => @shopName %>
   </div>
 
   <div class="field form-group">
     <%= form.label :'Shop Address' %>
-    <%= form.text_field :shopAdress, class: 'form-control' %>
+    <%= form.text_field :shopAdress, class: 'form-control', :value => @shopAdress %>
   </div>
-  
-      <div class="field form-group">
-    <%= form.label :'Upload Receipt' %>
-    <%= form.file_field :image %>
-  </div>
-  
+
     <div class="actions form-group">
     <%= form.submit 'Create receipt', class: 'btn btn-success' %>
   </div>

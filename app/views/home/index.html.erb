@@ -12,7 +12,7 @@
               <br>
                <% if user_signed_in? %>
                 <div class="actions form-group">
-                   <a> <%=link_to "View my receipts", receipts_path, class: 'btn btn-success' %> </a>
+                   <a> <%=link_to "View my receipts", user_receipts_path(@user), class: 'btn btn-success' %> </a>
                 </div>
                
                
