@@ -1,0 +1,38 @@
+<%= @ans%>  
+  
+  <div class="row" style="margin-top:20px">
+        <div class="col-md-2"></div>
+        <div class="col-md-8">
+          <center>
+              <h1><b>My monthly budget</b></h1> 
+              
+              <% if @is_found  %>
+                <h4>Budget name: <b><%= @budget_name%></b></h4> 
+              <h4>Savings type: <b><%= @savings_type%></b></h4> 
+              
+          <hr>
+          <p><b>Home rent: </b><%= @home_rent %></p>
+          <p><b>Utilities: </b><%= @utilities %></p>
+          <p><b>Food and Groceries: </b><%= @food_groceries %></p>
+          <p><b>Departmental: </b><%= @departmental %></p>
+          <p><b>Entertainment: </b><%= @entertainment %></p>
+          <p><b>Car and auto: </b><%= @car_auto %></p>
+          <p><b>Insurance and medical: </b><%= @insurance_medical %></p>
+          <p><b>Miscellaneous: </b><%= @misc %></p>
+              <% else %>
+                 <hr> <h4>You haven't created any budget yet.</h4> 
+                 <br>
+                 
+                 <%= link_to "Create budget", budgetplanner_path, class: 'btn btn-success' %>
+                 
+              <% end %>
+              
+              
+               
+             
+         </center>
+        </div>
+      
+        <div class="col-md-2"></div>
+        
+    </div>

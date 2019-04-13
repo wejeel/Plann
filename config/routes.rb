@@ -10,10 +10,16 @@ Rails.application.routes.draw do
   devise_for :users
     
   get 'budgetplanner' => "budgetplanner#index"
+<<<<<<< HEAD
+  get 'managebudget' => "managebudget#index"
+  
+ post '/generateBudget' =>"budgetplanner#generateBudget"
+=======
   get 'loaddata'      => "load_data#get_data_from_api"
   get 'loaddata/index'=> "load_data#index"
   get 'loaddata/uploadfile'=> "load_data#uploadfile"
 
+>>>>>>> 8bb5313dcc190f1c17272fd898769a0bcd046026
   
   get 'products/index'
   get 'products/show'
