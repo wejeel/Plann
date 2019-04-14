@@ -13,22 +13,22 @@
 
   <div class="field form-group">
     <%= form.label :'Receipt date' %>  <small id="emailHelp" class="form-text text-muted">What's the date on your receipt <i>(ex. 24-04-2019)</i></small>
-    <%= form.text_field :date, class: 'form-control', :value => @date %>
+    <%= form.text_field :date, class: 'form-control'%>
   </div>
 
   <div class="field form-group">
     <%= form.label :total %>  <small id="emailHelp" class="form-text text-muted">What's the total on your receipt <i>(ex. 200.32)</i></small>
-    <%= form.text_field :total, class: 'form-control', :value => @total %>
+    <%= form.text_field :total, class: 'form-control'%>
   </div>
 
   <div class="field form-group">
     <%= form.label :'Shop name' %>  <small id="emailHelp" class="form-text text-muted">Set your savings type <i>(ex. Spar, centra, M & S)</i></small>
-    <%= form.text_field :shopName, class: 'form-control', :value => @shopName %>
+    <%= form.text_field :shopName, class: 'form-control'%>
   </div>
 
   <div class="field form-group">
     <%= form.label :'Shop Address' %>
-    <%= form.text_field :shopAdress, class: 'form-control', :value => @shopAdress , placeholder: '12 Havron town, shalway'%>
+    <%= form.text_field :shopAdress, class: 'form-control', placeholder: '12 Havron town, shalway'%>
   </div>
 
     <div class="actions form-group">
