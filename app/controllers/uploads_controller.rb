@@ -1,74 +1,87 @@
 class UploadsController < ApplicationController
-  before_action :set_upload, only: [:show, :edit, :update, :destroy]
 
-  # GET /uploads
-  # GET /uploads.json
-  def index
-    @uploads = Upload.all
-  end
+before_action :authenticate_user!
 
-  # GET /uploads/1
-  # GET /uploads/1.json
-  def show
-  end
+=begin  
+def index
+  @receipt = Receipt.find(params[:receipt_id])
+  @upload = @receipt.upload
+end
+=end
 
-  # GET /uploads/new
-  def new
-    @upload = Upload.new
-  end
-
-  # GET /uploads/1/edit
-  def edit
-  end
-
-  # POST /uploads
-  # POST /uploads.json
-  def create
-    @upload = Upload.new(upload_params)
-
+def new
+  @receipt = Receipt.find(params[:receipt_id])
+  @upload = @receipt.upload
+  if @upload == nil
+    @upload = @receipt.build_upload()
+  else
     respond_to do |format|
-      if @upload.save
-        format.html { redirect_to @upload, notice: 'Upload was successfully created.' }
-        format.json { render :show, status: :created, location: @upload }
-      else
-        format.html { render :new }
-        format.json { render json: @upload.errors, status: :unprocessable_entity }
+      @user = User.find(current_user.id)
+        format.html { redirect_to receipt_upload_url(@receipt, @upload),
+        notice: 'You can only have one upload' }
+        format.json { render :show, status: :created,
+        location: @upload }
       end
+  end
+end
+
+def create
+  @receipt = Receipt.find(params[:receipt_id])
+  @upload = @receipt.build_upload(upload_params)
+  respond_to do |format|
+    if @upload.save
+      format.html { redirect_to receipt_upload_url(@receipt, @upload),
+      notice: 'Upload was successfully created.' }
+      format.json { render :show, status: :created,
+      location: @upload }
+    else
+      format.html { render :new }
+      format.json { render json: @upload.errors,
+      status: :unprocessable_entity }
     end
   end
+end
 
-  # PATCH/PUT /uploads/1
-  # PATCH/PUT /uploads/1.json
-  def update
-    respond_to do |format|
-      if @upload.update(upload_params)
-        format.html { redirect_to @upload, notice: 'Upload was successfully updated.' }
-        format.json { render :show, status: :ok, location: @upload }
-      else
-        format.html { render :edit }
-        format.json { render json: @upload.errors, status: :unprocessable_entity }
-      end
+def show
+  @user = User.find(current_user.id)
+  @receipt = Receipt.find(params[:receipt_id])
+  @upload = @receipt.upload
+end
+
+def edit
+  @receipt = Receipt.find(params[:receipt_id])
+  @upload = @receipt.upload
+end
+
+def update
+  @receipt = Receipt.find(params[:receipt_id])
+  @upload = @receipt.upload
+  respond_to do |format|
+    if @upload.update(upload_params)
+      format.html { redirect_to receipt_upload_url(@receipt, @upload),
+      notice: 'Upload was successfully updated.' }
+      format.json { render :show, status: :ok, location: @upload }
+    else
+      format.html { render :edit }
+      format.json { render json: @upload.errors,
+      status: :unprocessable_entity }
     end
   end
+end
 
-  # DELETE /uploads/1
-  # DELETE /uploads/1.json
-  def destroy
-    @upload.destroy
-    respond_to do |format|
-      format.html { redirect_to uploads_url, notice: 'Upload was successfully destroyed.' }
+def destroy
+  @receipt = Receipt.find(params[:receipt_id])
+  @upload = @receipt.upload
+  @upload.destroy
+  respond_to do |format|
+    format.html { redirect_to receipt_uploads_url(@receipt),
+      notice: 'Upload was successfully destroyed.' }
       format.json { head :no_content }
     end
-  end
+end
 
-  private
-    # Use callbacks to share common setup or constraints between actions.
-    def set_upload
-      @upload = Upload.find(params[:id])
-    end
-
-    # Never trust parameters from the scary internet, only allow the white list through.
-    def upload_params
+private
+  def upload_params
       params.require(:upload).permit(:image)
-    end
+  end
 end

@@ -71,9 +71,27 @@
       <td><%= product.unitPrice %></td>
       <td><%= product.totalPrice %></td>
       <td><%= link_to 'Edit', edit_receipt_product_path(@receipt, product)%></td>
+      <td><%= link_to 'X', receipt_upload_path(@receipt, product)%></td>
     </tr>
   <% end %>
- 
+ </div>
 </table>
-<%= link_to 'Add  New Product', new_receipt_product_path(@receipt)%></td>
+
+<%= link_to 'Add New Product', new_receipt_product_path(@receipt)%></td>
+ <p>
+    
+  <div style="width: 200px; height: 200px">
+   <b>Receipt:</b>
+
+  <%= image_tag(@receipt.upload.image) if @receipt.upload != nil %>
+ </p>
+
+
+
+<%= link_to 'Add Upload', new_receipt_upload_path(@receipt) if @receipt.upload == nil%>
+
+<%= link_to 'Destroy', receipt_upload_path(@receipt, @receipt.upload), :confirm => 'Are you sure?', :method => :delete if @receipt.upload != nil%>
+
+
+
 <%= link_to 'Back', user_receipts_path(@user) %>
