@@ -3,4 +3,15 @@
 
 require_relative 'config/application'
 
+require 'rake/testtask'
+
 Rails.application.load_tasks
+
+    Rake::TestTask.new do |t| 
+         t.libs << 'test'
+    end
+    
+  desc "Run tests"
+  
+  task :default => :test  
+

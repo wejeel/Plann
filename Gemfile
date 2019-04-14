@@ -31,8 +31,13 @@ gem 'turbolinks', '~> 5'
 gem 'jbuilder', '~> 2.5'
 
 gem 'budgetGenerator'
+gem  'brakeman'
 
+gem 'rubocop', '~> 0.67.2', require: false
 
+gem 'rack-attack'
+
+gem 'pg'
 
 # Use Redis adapter to run Action Cable in production
 # gem 'redis', '~> 4.0'
