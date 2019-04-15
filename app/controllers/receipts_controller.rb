@@ -1,18 +1,16 @@
 class ReceiptsController < ApplicationController
    before_action :authenticate_user!
   before_action :set_receipt, only: [:show, :edit, :update, :destroy]
-
+require 'observer'
   # GET /receipts
   # GET /receipts.json
+  include Observable
   def index
     
-    #uncomment after development
     
     @user = User.find_by(email: current_user.email)
     @receipts = @user.receipts
-
-    #@user = User.find(params[:user_id])
-    #@receipts = @user.receipts
+    add_observer(Notifier.new)
     
      @mybudget = Userbudget.find_by(user_id: current_user.email)
     
@@ -37,8 +35,6 @@ class ReceiptsController < ApplicationController
   # GET /receipts/1
   # GET /receipts/1.json
   def show
-    
-    
      @user = User.find(params[:user_id])
      @receipt = @user.receipts.find(params[:id])
   end
@@ -48,7 +44,7 @@ class ReceiptsController < ApplicationController
     @user = User.find(params[:user_id])
     @receipt = @user.receipts.build
   end
-
+  
   # GET /receipts/1/edit
   def edit
     @user = User.find(params[:user_id])
