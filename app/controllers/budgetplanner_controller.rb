@@ -40,8 +40,8 @@ end
 
  #Userbudget.delete_all
  
- @budgetlist = Userbudget.find_by(user_id: current_user.email)
- @budgetlist.destroy
+# @budgetlist = Userbudget.find_by(user_id: current_user.email)
+# @budgetlist.destroy
    
     #new_dollars = params[:updatedFunds]
     
