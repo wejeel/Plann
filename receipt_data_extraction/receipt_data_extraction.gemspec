@@ -8,5 +8,5 @@ Gem::Specification.new do |s|
     s.email = 'marjoscam@comp.ufla.br'
     s.homepage = 'https://github.com/mjcamargo/receipt_data_extraction'
     s.files = Dir['lib/*.rb']
-
+    s.license       = 'MIT'
 end

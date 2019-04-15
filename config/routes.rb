@@ -8,7 +8,9 @@ Rails.application.routes.draw do
   # devise_for :users, path: '', path_names: { sign_in: 'login', sign_out: 'logout'}
   
   devise_for :users
-  
+  get 'load_data/get_data_from_api' => 'load_data#get_data_from_api'
+  get 'load_data/index' => 'load_data#index'
+
 
  
   

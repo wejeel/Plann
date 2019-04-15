@@ -1,7 +1,5 @@
 require "reg_exp"
 require "google/cloud/vision"
-require 'dotenv'
-Dotenv.load("../.env")
 
 module ReceiptDataExtraction
     class Extract
