@@ -61,6 +61,24 @@ class ReceiptsController < ApplicationController
     @user = User.find(params[:user_id])
     @receipt = @user.receipts.build(params.require(:receipt).permit(:date, :total, :shopName, :shopAdress, :image))
     
+    
+    @amountdeduct = params[:total];
+    
+    @mybudget = Userbudget.find_by(user_id: current_user.email)
+
+if @mybudget
+  
+    @budget_spent_amount = @mybudget.budget_spent.to_f + @amountdeduct.to_f
+    
+    #@newbudget = @budget_amount.to_f - @amountdeduct.to_f
+    
+    @mybudget.budget_spent = @budget_spent_amount
+    
+    @mybudget.save
+
+end
+    
+    
     if @receipt.save
         redirect_to user_receipt_path(@user, @receipt)
     else
