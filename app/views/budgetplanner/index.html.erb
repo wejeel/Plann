@@ -19,29 +19,66 @@
   <br>
   
  
- <%= text_field_tag :budgetname, nil, placeholder: 'My budget', class: 'form-control' %>
+ <%= text_field_tag :budgetname, nil, placeholder: 'My budget', class: 'form-control input_budgetform', id: "budgetname" %>
  <br>
   <small id="emailHelp" class="form-text text-muted">Set your savings target amount below <i>(ex. 1000)</i></small>
   <br>
   
-   <%= text_field_tag :budgetamount, nil, placeholder: 'My budget', class: 'form-control' %>
+   <%= text_field_tag :budgetamount, nil, placeholder: 'My budget', class: 'form-control input_budgetform', id: "budgetamount", onkeypress: "return isNumber(event)" %>
    
   <br>
-  <small id="emailHelp" class="form-text text-muted">Set your savings type <i>(ex. Normal, Aggressive, Medium, and Low)</i></small>
+  <small id="emailHelp" class="form-text text-muted">Set your savings type <i>(ex. Basic, Low, Medium Aggressive)</i></small>
   <br>
   
   <%= select_tag 'savings_type', options_for_select([["Basic savings type",1],["Low savings type",2],["Medium savings type",3],["Aggressive savings type",4]]), class: 'form-control'  %>
   
   <br><br>
   
- <%= submit_tag "Create budget", class: 'btn btn-success' %>
+ <%= submit_tag "Create budget", class: 'btn btn-success', disabled: true, id: "submitbtn" %>
   </div>
 </div>
 
 
 <% end %>
  
-          
+                <script>
+                    $(".input_budgetform")
+                            .bind("change", validate_budgetform_form)
+                            .bind("keyup", validate_budgetform_form);
+                            
+                            
+           function isNumber(evt) {
+    evt = (evt) ? evt : window.event;
+    var charCode = (evt.which) ? evt.which : evt.keyCode;
+    if (charCode > 31 && (charCode < 48 || charCode > 57)) {
+        return false;
+    }
+    return true;
+}
+                            
+                             function validate_budgetform_form()
+                    {
+
+                        submitbtn = document.getElementById("submitbtn");
+
+                        var f1 = $("#budgetname").val().trim();
+                        var f2 = $("#budgetamount").val().trim();
+
+                        if (f1 !== "" && f2 !== "")
+                        {
+                            $("#submitbtn").prop("disabled", false);
+                            submitbtn.style.background = "#33cc00";
+                            return true;
+                        }
+                        else
+                        {
+                            $("#submitbtn").prop("disabled", true);
+                            submitbtn.style.background = "#a5dcda";
+                            return false;
+                        }
+
+                    }
+        </script>  
  
          </center>
         </div>

@@ -5,12 +5,11 @@
       <div class="col-md-8">
           
           <div class="jumbotron">
-              <h1>Welcome to expensease!</h1>
               
-              <img src="../assets/images/expenseaseico.png"/>
-              
-              <br>
-              <p></p>
+              <%=image_tag("expenseaseico.png", alt: "Example Image")%>
+               <br>
+                <h1>Welcome to expensease!</h1>
+           
                <small id="emailHelp" class="form-text text-muted">Expensease helps you track your receipts and plan your budget.</small>
               <br>
                <% if user_signed_in? %>

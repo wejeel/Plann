@@ -52,9 +52,6 @@ GEM
     bindex (0.7.0)
     bootsnap (1.4.3)
       msgpack (~> 1.0)
-    bootstrap_form (4.2.0)
-      actionpack (>= 5.0)
-      activemodel (>= 5.0)
     brakeman (4.5.0)
     budgetGenerator (1.0.0)
     builder (3.2.3)
@@ -302,7 +299,6 @@ PLATFORMS
 
 DEPENDENCIES
   bootsnap (>= 1.1.0)
-  bootstrap_form (>= 4.2.0)
   brakeman
   budgetGenerator
   byebug

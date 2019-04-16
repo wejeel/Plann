@@ -22,7 +22,7 @@ gem 'google-cloud-storage'
 gem 'dotenv'
 gem 'google-cloud-vision'
 gem 'devise', '~> 4.2'
-gem "bootstrap_form", ">= 4.2.0"
+#gem "bootstrap_form", ">= 4.2.0"
 
 #gem "receipt_data_extraction"
 # Use CoffeeScript for .coffee assets and views
@@ -56,7 +56,7 @@ gem 'bootsnap', '>= 1.1.0', require: false
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
   gem 'byebug', platforms: [:mri, :mingw, :x64_mingw]
-  #gem 'sqlite3'
+  gem 'sqlite3'
 end
 
 group :development do

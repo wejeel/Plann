@@ -13,7 +13,7 @@
   <div class="card-body">
     <h5 class="card-title">Budget name: <b><%= @budget_name%></b> | Savings type: <b><%= @savings_type%></b></h5>
     <!--<p class="card-text">With supporting text below as a natural lead-in to additional content.</p>-->
-    
+      <%= link_to "Print my budget", '#', class: "btn btn-success", onclick: 'javascript:print();return false;' %>
           <hr>
           
             <div > 
