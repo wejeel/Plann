@@ -64,19 +64,23 @@ require 'observer'
     @receipt = @user.receipts.build(params.require(:receipt).permit(:date, :total, :shopName, :shopAdress, :image))
     
     
-    @amountdeduct = params[:total];
+    @amountdeduct = params[:receipt][:total]
     
     @mybudget = Userbudget.find_by(user_id: current_user.email)
 
 if @mybudget
   
-    @budget_spent_amount = @mybudget.budget_spent.to_f + @amountdeduct.to_f
+    @get_budgetval = @mybudget.budget_spent.to_f
+    
+    @budget_spent_amount = @get_budgetval + @amountdeduct.to_f
     
     #@newbudget = @budget_amount.to_f - @amountdeduct.to_f
     
-    @mybudget.budget_spent = @budget_spent_amount
+    #@mybudget.budget_spent = @budget_spent_amount.to_f
     
-    @mybudget.save
+    #@mybudget.save
+    
+    Userbudget.where(:user_id => current_user.email).update_all(budget_spent: @budget_spent_amount)
 
 end
     
