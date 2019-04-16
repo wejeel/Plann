@@ -19,11 +19,26 @@ require 'observer'
     @budget_amount = @mybudget.budget_amount
     @budget_spent = @mybudget.budget_spent
     @savings_type = @mybudget.savings_type
-    
     @get_percentage = (@budget_spent / @budget_amount) * 100
-
-    
     @savings_on_budget = @budget_amount - @budget_spent
+    
+    
+    @budget_insight = nil
+    
+    if @savings_on_budget.between?(-9000000000, 0)
+    @budget_insight = "Savings health is critically low : Stop spending"
+    elsif @savings_on_budget.between?(0, 50)
+    @budget_insight = "Savings health is really low : Reduce spending"
+    elsif @savings_on_budget.between?(51,100)
+    @budget_insight = "Savings health is getting low : Reduce spending"
+    elsif @savings_on_budget.between?(101,200)
+    @budget_insight = "Savings health is moderate : Follow budget smartly"
+    elsif @savings_on_budget.between?(201,1000000)
+    @budget_insight = "Savings health is okay : Keep up the good work"
+     end
+   
+      
+      
 
     #@budget_spent = @mybudget.budget_spent
     
