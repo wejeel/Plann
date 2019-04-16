@@ -10,10 +10,12 @@ require 'observer'
     
     @user = User.find_by(email: current_user.email)
     @receipts = @user.receipts
-    add_observer(Notifier.new)
+    #add_observer(Notifier.new)
     
      @mybudget = Userbudget.find_by(user_id: current_user.email)
     
+    if @mybudget 
+       
     @budget_amount = @mybudget.budget_amount
     @budget_spent = @mybudget.budget_spent
     @savings_type = @mybudget.savings_type
@@ -22,14 +24,18 @@ require 'observer'
 
     
     @savings_on_budget = @budget_amount - @budget_spent
-    @mybudget = Userbudget.find_by user_id: current_user.email
-    @dept = @mybudget.budget_amount
-    @savings_type = @mybudget.savings_type
+
     #@budget_spent = @mybudget.budget_spent
     
     if @budget_spent.nil?
       @budget_spent = 0.00
     end
+    else
+      @budget_amount = 0
+    @budget_spent = 0
+    @savings_type = "No budget yet"
+    end
+   
   end
 
   # GET /receipts/1
