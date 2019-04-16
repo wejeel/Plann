@@ -35,7 +35,7 @@
    <% if user_signed_in? %>
    
     <li class="nav-item active">
-       <a><%=link_to "My receipts", user_receipts_path(@user), class: 'nav-link' %> </a>
+       <a><%=link_to "My receipts", receipts_path, class: 'nav-link' %> </a>
       </li>
    
       <li class="nav-item">
