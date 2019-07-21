@@ -1,12 +1,14 @@
 source 'https://rubygems.org'
 git_source(:github) { |repo| "https://github.com/#{repo}.git" }
 
-ruby '2.4.0'
+ruby '2.6.3'
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '~> 5.2.2'
 # Use sqlite3 as the database for Active Record
-#gem 'sqlite3', '~> 1.3.6'
+#gem 'sqlite3'
+
+
 # Use Puma as the app server
 gem 'puma', '~> 3.11'
 # Use SCSS for stylesheets
@@ -16,7 +18,7 @@ gem 'uglifier', '>= 1.3.0'
 # See https://github.com/rails/execjs#readme for more supported runtimes
 # gem 'mini_racer', platforms: :ruby
 
-gem 'pg'
+#gem 'pg'
 
 gem 'google-cloud-storage'
 gem 'dotenv'
@@ -35,7 +37,7 @@ gem 'jbuilder', '~> 2.5'
 gem 'budgetGenerator'
 gem  'brakeman'
 
-gem 'rubocop', '~> 0.67.2', require: false
+#gem 'rubocop', '~> 0.67.2', require: false
 
 gem 'rack-attack'
 
@@ -56,7 +58,7 @@ gem 'bootsnap', '>= 1.1.0', require: false
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
   gem 'byebug', platforms: [:mri, :mingw, :x64_mingw]
-  gem 'sqlite3'
+ # gem 'sqlite3'
 end
 
 group :development do
@@ -67,11 +69,11 @@ group :development do
   gem 'spring'
   gem 'spring-watcher-listen', '~> 2.0.0'
   
-   gem 'sqlite3'
+  gem 'sqlite3', git: "https://github.com/larskanis/sqlite3-ruby", branch: "add-gemspec"
 end
 
 group :production do
- gem 'pg'
+gem 'pg'
 end
 
 
