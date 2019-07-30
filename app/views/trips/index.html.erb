@@ -1,0 +1,112 @@
+  <div class="row" style="margin-top:20px">
+        <div class="col-md-4"></div>
+        <div class="col-md-4">
+          <center> <h2>Create Destination Trip</h2> 
+          
+
+<br>
+  
+<%= form_tag "/createTrip" do %>
+
+<div class="card">
+     <div class="card-header">
+     <small id="emailHelp" class="form-text text-muted">Plann helps you organize your travel</small>
+  </div>
+  
+  <div class="card-body">
+   
+ <small id="emailHelp" class="form-text text-muted">Give your trip a name <i>(ex. Bahamas trip)</i></small>
+  <br>
+  
+ 
+ <%= text_field_tag :tripname, nil, placeholder: 'Trip name', class: 'form-control input_budgetform', id: "tripname" %>
+ <br>
+  <small id="emailHelp" class="form-text text-muted">Set your trip budget  <i>(ex. $1500)</i></small>
+  <br>
+  
+   <%= text_field_tag :tripbudget, nil, placeholder: 'My budget', class: 'form-control input_budgetform', id: "tripbudget", onkeypress: "return isNumber(event)" %>
+   
+   <br>
+
+  <small id="emailHelp" class="form-text text-muted">Set your trip date  <i>(ex. 21/9/2019)</i></small>
+  <br>
+  
+   <%= text_field_tag :tripdate, nil, placeholder: 'Travel date', class: 'form-control input_budgetform', id: "trip_date"  %>
+   
+   <br>
+   
+   
+  <small id="emailHelp" class="form-text text-muted">Set your trip duration in days <i>(ex. 5 days, 6 days, 7 days etc)</i></small>
+  <br>
+  
+  <%= select_tag 'travel_duration', options_for_select([[1,1],[2,2],[3,3],[4,4],[5,5],[6,6],[7,7],[8,8],[9,9],[10,10]]), class: 'form-control'  %>
+  
+    <br>
+  <small id="emailHelp" class="form-text text-muted">Set your travel mode <i>(ex. Air, Land, Sea)</i></small>
+  <br>
+  
+  <%= select_tag 'travel_mode', options_for_select([["Air","Air"],["Land","Land"],["Sea","Sea"]]), class: 'form-control'  %>
+
+  <br>
+  <small id="emailHelp" class="form-text text-muted">Set your trip location <i>(ex. Paris, Canada, Bali)</i></small>
+  <br>
+  
+  <%= select_tag 'trip_location', options_for_select([["Canada","Canada"],["Paris","Paris"],["Bali","Bali"],["Dublin","Dublin"]]), class: 'form-control'  %>
+  
+  <br><br>
+  
+ <%= submit_tag "Create trip", class: 'btn btn-success', disabled: true, id: "submitbtn" %>
+  </div>
+</div>
+
+<br><br>
+
+
+<% end %>
+ 
+                <script>
+                    $(".input_budgetform")
+                            .bind("change", validate_budgetform_form)
+                            .bind("keyup", validate_budgetform_form);
+                            
+                            
+           function isNumber(evt) {
+    evt = (evt) ? evt : window.event;
+    var charCode = (evt.which) ? evt.which : evt.keyCode;
+    if (charCode > 31 && (charCode < 48 || charCode > 57)) {
+        return false;
+    }
+    return true;
+}
+                            
+                             function validate_budgetform_form()
+                    {
+
+                        submitbtn = document.getElementById("submitbtn");
+
+                        var f1 = $("#tripname").val().trim();
+                        var f2 = $("#tripbudget").val().trim();
+
+                        if (f1 !== "" && f2 !== "")
+                        {
+                            $("#submitbtn").prop("disabled", false);
+                            submitbtn.style.background = "#33cc00";
+                            submitbtn.style.border = "#33cc00";
+                            return true;
+                        }
+                        else
+                        {
+                            $("#submitbtn").prop("disabled", true);
+                            submitbtn.style.background = "#a5dcda";
+                            return false;
+                        }
+
+                    }
+        </script>  
+ 
+         </center>
+        </div>
+      
+        <div class="col-md-4"></div>
+        
+    </div>

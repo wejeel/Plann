@@ -4,7 +4,7 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>Expensease</title>
+    <title>Plann</title>
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
     
@@ -24,7 +24,7 @@
       
     <nav class="navbar navbar-expand-lg navbar-dark bg-primary">
 
-   <a><%=link_to "Expensease", root_path, class: 'navbar-brand' %> </a>
+   <a><%=link_to "Plann", root_path, class: 'navbar-brand' %> </a>
   <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
     <span class="navbar-toggler-icon"></span>
   </button>
@@ -35,17 +35,22 @@
    <% if user_signed_in? %>
    
     <li class="nav-item active">
-       <a><%=link_to "My receipts", receipts_path, class: 'nav-link' %> </a>
+       <a><%=link_to "Create Trips", trips_path, class: 'nav-link' %> </a>
       </li>
    
       <li class="nav-item">
        <!--<a class="nav-link" href="#">Budget planner</a> -->
-       <a><%=link_to "Budget planner", budgetplanner_path, class: 'nav-link' %> </a>
+       <a><%=link_to "My Destination Trips", mytrips_path, class: 'nav-link' %> </a>
       </li>
       
       <li class="nav-item">
        <!--<a class="nav-link" href="#">Budget planner</a> -->
-       <a><%=link_to "My Budget", managebudget_path, class: 'nav-link' %> </a>
+       <a><%=link_to "Trip suggestions", trip_suggestions_path, class: 'nav-link' %> </a>
+      </li>
+
+       <li class="nav-item">
+       <!--<a class="nav-link" href="#">Budget planner</a> -->
+       <a><%=link_to "Hotel suggestions", hotel_suggestions_path, class: 'nav-link' %> </a>
       </li>
       
         <li class="nav-item">

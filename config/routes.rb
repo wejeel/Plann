@@ -1,6 +1,14 @@
 Rails.application.routes.draw do
   
- 
+  resources :tasks
+  get 'trip_suggestions' => "trip_suggestions#index"
+  get 'hotel_suggestions' => "hotel_suggestions#index"
+  get 'mytrips'  => "mytrips#index"
+  get 'trips' => "trips#index"
+
+  
+ post '/createTrip' =>"trips#createTrip"
+
   root :to =>'home#index'
   # root to: 'receipts#index'
 
@@ -10,11 +18,6 @@ Rails.application.routes.draw do
   devise_for :users
   get 'load_data/get_data_from_api' => 'load_data#get_data_from_api'
   get 'load_data/index' => 'load_data#index'
-
-
- 
-  
-
   
   #match '/receipts/:receipt_id/uploads/newupload' => 'uploads#newreceiptupload', via: :get, as: :new_receipt_upload
 
@@ -27,6 +30,7 @@ Rails.application.routes.draw do
   get 'managebudget' => "managebudget#index"
   
  post '/generateBudget' =>"budgetplanner#generateBudget"
+
   get 'loaddata'      => "load_data#get_data_from_api"
   get 'loaddata/index'=> "load_data#index"
   get 'loaddata/uploadfile'=> "load_data#uploadfile"

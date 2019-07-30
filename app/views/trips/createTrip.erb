@@ -1,0 +1,45 @@
+  <div class="row" style="margin-top:20px">
+        <div class="col-md-4"></div>
+        <div class="col-md-4">
+          <center> <h2>Your Trip has been created</h2> 
+          
+
+<br>
+ 
+<div class="card">
+     <div class="card-header">
+     <small id="emailHelp" class="form-text text-muted">Here's your trip overview</small>
+  </div>
+  
+  <div class="card-body">
+   
+ <small id="emailHelp" class="form-text text-muted">Your trip name is : <b><%=@tripname%></b></small>
+  <br>
+  
+  <small id="emailHelp" class="form-text text-muted">Your trip budget is: <b><%=@tripbudget%></b></small>
+  <br>
+  <small id="emailHelp" class="form-text text-muted">Your trip date is: <b><%=@tripdate%></b> </small>
+  <br>
+  <small id="emailHelp" class="form-text text-muted">Your trip duration in days is: <b><%=@travel_duration%></b> </small>
+    <br>
+  <small id="emailHelp" class="form-text text-muted">Your travel mode is: <b><%=@travel_mode%></b> </small>
+  <br>
+  <small id="emailHelp" class="form-text text-muted">Your trip location is: <b><%=@trip_location%></b> </small>
+ <br>
+  
+ <%# <%= submit_tag "See all trips", class: 'btn btn-success', id: "submitbtn" %> 
+
+ <%= link_to "See all trips", mytrips_path, class: "btn btn-success" %>
+
+
+  </div>
+</div>
+
+<br><br>
+
+         </center>
+        </div>
+      
+        <div class="col-md-4"></div>
+        
+    </div>

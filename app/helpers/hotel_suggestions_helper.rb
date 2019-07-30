@@ -1,0 +1,2 @@
+module HotelSuggestionsHelper
+end

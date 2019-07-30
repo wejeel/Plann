@@ -25,9 +25,8 @@ if @mybudget
     @insurance_medical = @mybudget.insurance_medical
     @misc = @mybudget.misc
 end
-
-    
-
-    
+ 
 end
+
+
 end

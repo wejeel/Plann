@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_04_13_200551) do
+ActiveRecord::Schema.define(version: 2019_07_30_190424) do
 
   create_table "active_storage_attachments", force: :cascade do |t|
     t.string "name", null: false
@@ -74,8 +74,27 @@ ActiveRecord::Schema.define(version: 2019_04_13_200551) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.integer "user_id"
-    t.integer "upload_id"
     t.index ["user_id"], name: "index_receipts_on_user_id"
+  end
+
+  create_table "tasks", force: :cascade do |t|
+    t.string "title"
+    t.boolean "completed"
+    t.integer "order"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "trips", force: :cascade do |t|
+    t.string "tripname"
+    t.string "tripbudget"
+    t.string "tripdate"
+    t.string "travel_duration"
+    t.string "travel_mode"
+    t.string "trip_location"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.string "trip_owner"
   end
 
   create_table "uploads", force: :cascade do |t|

@@ -1,0 +1,41 @@
+  <div class="row" style="margin-top:20px">
+        <div class="col-md-2"></div>
+        <div class="col-md-8">
+          <center> <h2>All your planned trips</h2>    
+
+<br>
+
+
+<div class="card">
+     <div class="card-header">
+     <small id="emailHelp" class="form-text text-muted">Plann helps you organize your travel</small>
+  </div>
+  
+  <div class="card-body">
+
+
+<% @myTrip.each do |trip| %>
+<div class="card text-white bg-success mb-3" style="max-width: 20rem;">
+  <div class="card-header"><b> <%= trip.tripname %></b></div>
+  <div class="card-body">
+    <h5 class="card-title">
+    <%= trip.travel_duration %> days</h5>
+    <p class="card-text text-white">Budget <%= trip.tripbudget %></p>
+  </div>
+  
+</div>
+<% end %>
+
+
+  </div>
+
+</div>
+
+<br><br>
+ 
+         </center>
+        </div>
+      
+        <div class="col-md-2"></div>
+        
+    </div>
