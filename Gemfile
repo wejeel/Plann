@@ -14,9 +14,6 @@ gem 'grape-active_model_serializers'
 gem 'grape-swagger'
 gem 'grape-swagger-rails'
 
-require 'rbconfig'
-gem 'wdm', '>= 0.1.0' if RbConfig::CONFIG['target_os'] =~ /mswin|mingw/i
-
 # Use Puma as the app server
 gem 'puma', '~> 3.11'
 # Use SCSS for stylesheets
