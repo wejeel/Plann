@@ -1,0 +1,24 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Name:</strong>
+  <%= @suggestions_box_trip.name %>
+</p>
+
+<p>
+  <strong>Description:</strong>
+  <%= @suggestions_box_trip.description %>
+</p>
+
+<p>
+  <strong>Image url:</strong>
+  <%= @suggestions_box_trip.image_url %>
+</p>
+
+<p>
+  <strong>Rating:</strong>
+  <%= @suggestions_box_trip.rating %>
+</p>
+
+<%= link_to 'Edit', edit_suggestions_box_trip_path(@suggestions_box_trip) %> |
+<%= link_to 'Back', suggestions_box_trips_path %>

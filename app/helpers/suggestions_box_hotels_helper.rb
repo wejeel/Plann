@@ -1,0 +1,2 @@
+module SuggestionsBoxHotelsHelper
+end

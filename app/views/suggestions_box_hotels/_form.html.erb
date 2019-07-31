@@ -1,0 +1,67 @@
+<%= form_with(model: suggestions_box_hotel, local: true) do |form| %>
+  <% if suggestions_box_hotel.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(suggestions_box_hotel.errors.count, "error") %> prohibited this suggestions_box_hotel from being saved:</h2>
+
+      <ul>
+      <% suggestions_box_hotel.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= form.label :hotel_name %>
+    <%= form.text_field :hotel_name %>
+  </div>
+
+  <div class="field">
+    <%= form.label :pernight %>
+    <%= form.text_field :pernight %>
+  </div>
+
+  <div class="field">
+    <%= form.label :decimal %>
+    <%= form.text_field :decimal %>
+  </div>
+
+  <div class="field">
+    <%= form.label :country %>
+    <%= form.text_field :country %>
+  </div>
+
+  <div class="field">
+    <%= form.label :city %>
+    <%= form.text_field :city %>
+  </div>
+
+  <div class="field">
+    <%= form.label :rating %>
+    <%= form.number_field :rating %>
+  </div>
+
+  <div class="field">
+    <%= form.label :image %>
+    <%= form.text_field :image %>
+  </div>
+
+  <div class="field">
+    <%= form.label :buffet %>
+    <%= form.check_box :buffet %>
+  </div>
+
+  <div class="field">
+    <%= form.label :hall %>
+    <%= form.check_box :hall %>
+  </div>
+
+  <div class="field">
+    <%= form.label :gym %>
+    <%= form.check_box :gym %>
+  </div>
+
+  <div class="actions">
+    <%= form.submit %>
+  </div>
+<% end %>

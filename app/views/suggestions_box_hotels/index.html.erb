@@ -1,0 +1,45 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Suggestions Box Hotels</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Hotel name</th>
+      <th>Pernight</th>
+      <th>Decimal</th>
+      <th>Country</th>
+      <th>City</th>
+      <th>Rating</th>
+      <th>Image</th>
+      <th>Buffet</th>
+      <th>Hall</th>
+      <th>Gym</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @suggestions_box_hotels.each do |suggestions_box_hotel| %>
+      <tr>
+        <td><%= suggestions_box_hotel.hotel_name %></td>
+        <td><%= suggestions_box_hotel.pernight %></td>
+        <td><%= suggestions_box_hotel.decimal %></td>
+        <td><%= suggestions_box_hotel.country %></td>
+        <td><%= suggestions_box_hotel.city %></td>
+        <td><%= suggestions_box_hotel.rating %></td>
+        <td><%= suggestions_box_hotel.image %></td>
+        <td><%= suggestions_box_hotel.buffet %></td>
+        <td><%= suggestions_box_hotel.hall %></td>
+        <td><%= suggestions_box_hotel.gym %></td>
+        <td><%= link_to 'Show', suggestions_box_hotel %></td>
+        <td><%= link_to 'Edit', edit_suggestions_box_hotel_path(suggestions_box_hotel) %></td>
+        <td><%= link_to 'Destroy', suggestions_box_hotel, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Suggestions Box Hotel', new_suggestions_box_hotel_path %>

@@ -1,0 +1,2 @@
+class SuggestionsBoxHotel < ApplicationRecord
+end

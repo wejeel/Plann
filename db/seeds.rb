@@ -18,3 +18,5 @@ Trip.create(trip_owner: "wejepraise@yahoo.com", tripname: "Mykonos trip", tripbu
 Trip.create(trip_owner: "wejepraise@yahoo.com", tripname: "Dubai summer tour", tripbudget: "2000", tripdate: "3/10/2019", travel_duration: "5", travel_mode: "Air", trip_location: "Dubai")
 
 Task.create(title: "hello", completed: false, order: 1)
+
+Task.create(title: "testing", completed: false, order: 8)
