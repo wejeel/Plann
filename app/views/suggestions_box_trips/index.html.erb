@@ -1,0 +1,33 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Suggestions Box Trips</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Description</th>
+      <th>Image url</th>
+      <th>Rating</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @suggestions_box_trips.each do |suggestions_box_trip| %>
+      <tr>
+        <td><%= suggestions_box_trip.name %></td>
+        <td><%= suggestions_box_trip.description %></td>
+        <td><%= suggestions_box_trip.image_url %></td>
+        <td><%= suggestions_box_trip.rating %></td>
+        <td><%= link_to 'Show', suggestions_box_trip %></td>
+        <td><%= link_to 'Edit', edit_suggestions_box_trip_path(suggestions_box_trip) %></td>
+        <td><%= link_to 'Destroy', suggestions_box_trip, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Suggestions Box Trip', new_suggestions_box_trip_path %>

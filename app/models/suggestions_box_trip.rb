@@ -1,0 +1,2 @@
+class SuggestionsBoxTrip < ApplicationRecord
+end
