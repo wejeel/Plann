@@ -46,7 +46,6 @@ gem  'brakeman'
 
 gem 'rack-attack'
 
- gem 'wdm', '>= 0.1.0'
 # Use Redis adapter to run Action Cable in production
 # gem 'redis', '~> 4.0'
 # Use ActiveModel has_secure_password
@@ -68,6 +67,7 @@ group :development, :test do
 end
 
 group :development do
+ gem 'wdm', '>= 0.1.0'
   # Access an interactive console on exception pages or by calling 'console' anywhere in the code.
   gem 'web-console', '>= 3.3.0'
   gem 'listen', '>= 3.0.5', '< 3.2'
