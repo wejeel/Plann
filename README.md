@@ -1,24 +1,3 @@
 # README
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
-
-Things you may want to cover:
-
-* Ruby version
-
-* System dependencies
-
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+Plann is a platform that lets users plan trips, and receive trip and hotel suggestions. Plan also provides useful APIs for receiving suggestions. Plann was developed on ruby on rails framework and deployed to heroku.. 
