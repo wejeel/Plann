@@ -6,6 +6,7 @@ module API
       mount API::V1::Task
       mount API::V1::Trip
       mount API::V1::SuggestionsBoxTrips
+      mount API::V1::SuggestionsBoxHotels
 
     
       add_swagger_documentation(

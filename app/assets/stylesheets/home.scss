@@ -31,11 +31,15 @@ hr {
       color: #fff;
     }
   }
+  .btn{
+    color:"#ffffff";
+  }
   
   /* Bustom button */
   .btn-primary {
     background: #1096fc;
     border: 0;
+    color:"#ffffff";
     
     &:hover {
       background: darken(#1096fc, 7%);
