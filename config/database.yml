@@ -10,22 +10,22 @@
 
 #LOCAL DEV MODE
 
-# default: &default
-#   adapter: sqlite3
-#   pool: <%= ENV.fetch("RAILS_MAX_THREADS") { 5 } %>
-#   timeout: 5000
+default: &default
+  adapter: sqlite3
+  pool: <%= ENV.fetch("RAILS_MAX_THREADS") { 5 } %>
+  timeout: 5000
 
 
-# development:
-#   <<: *default
-#   database: db/development.sqlite3
-# test:
-#   <<: *default
-#   database: db/test.sqlite3
+development:
+  <<: *default
+  database: db/development.sqlite3
+test:
+  <<: *default
+  database: db/test.sqlite3
 
-# production:
-#   <<: *default
-#   database: db/production.sqlite3
+production:
+  <<: *default
+  database: db/production.sqlite3
 
   #LOCAL DEV MODE
 
@@ -33,33 +33,33 @@
 
   #PRODUCTION DEV MODE
 
-  default: &default
-  adapter: postgresql
-  pool: <%= ENV.fetch("RAILS_MAX_THREADS") { 5 } %>
-  timeout: 5000
+#   default: &default
+#   adapter: postgresql
+#   pool: <%= ENV.fetch("RAILS_MAX_THREADS") { 5 } %>
+#   timeout: 5000
 
-development:
-  adapter: postgresql
-  encoding: utf8
-  database: project_development
-  pool: 5
-  username: 
-  password:
+# development:
+#   adapter: postgresql
+#   encoding: utf8
+#   database: project_development
+#   pool: 5
+#   username: 
+#   password:
 
-test: &TEST
-  adapter: postgresql
-  encoding: utf8
-  database: project_test
-  pool: 5
-  username: 
-  password:
+# test: &TEST
+#   adapter: postgresql
+#   encoding: utf8
+#   database: project_test
+#   pool: 5
+#   username: 
+#   password:
 
-production:
-  adapter: postgresql
-  encoding: utf8
-  database: project_production
-  pool: 5
-  username: 
-  password:
+# production:
+#   adapter: postgresql
+#   encoding: utf8
+#   database: project_production
+#   pool: 5
+#   username: 
+#   password:
 
   #PRODUCTION DEV MODE
