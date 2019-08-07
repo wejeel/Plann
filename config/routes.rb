@@ -1,6 +1,7 @@
 Rails.application.routes.draw do
   
 
+  resources :trip_todos
   resources :suggestions_box_trips
   resources :suggestions_box_hotels
   mount API::Base, at: "/"
@@ -31,19 +32,6 @@ Rails.application.routes.draw do
   resources :receipts do
     resources:uploads
   end
-
-  get 'uploads/create_upload' => 'uploads#create_upload'
-  get 'budgetplanner' => "budgetplanner#index"
-  get 'managebudget' => "managebudget#index"
-  
- post '/generateBudget' =>"budgetplanner#generateBudget"
-
-  get 'loaddata'      => "load_data#get_data_from_api"
-  get 'loaddata/index'=> "load_data#index"
-  get 'loaddata/uploadfile'=> "load_data#uploadfile"
-  
-  get 'uploads/index_upload'=> "uploads#index_upload"
-  get 'uploads/create_upload'=> "uploads#create_upload"
   
   resources :users do
     resources :receipts

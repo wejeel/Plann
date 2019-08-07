@@ -62,6 +62,11 @@
        <!--<a class="nav-link" href="#">Budget planner</a> -->
        <a><%=link_to "Add Trip", new_suggestions_box_trip_path, class: 'nav-link' %> </a>
       </li>
+
+      <li class="nav-item">
+       <!--<a class="nav-link" href="#">Budget planner</a> -->
+       <a><%=link_to "Find Trip To dos", trip_todos_path, class: 'nav-link' %> </a>
+      </li>
       
         <li class="nav-item">
       <a><%=link_to current_user.email, edit_user_registration_path, class: 'nav-link' %> </a>

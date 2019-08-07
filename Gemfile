@@ -7,6 +7,7 @@ ruby '2.6.3'
 gem 'rails', '~> 5.2.2'
 
 # gem 'active_model_serializers', '~> 0.10.0.rc2'
+gem 'faraday'
 
 gem 'grape'
 gem 'rack-cors', :require => 'rack/cors'

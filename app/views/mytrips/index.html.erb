@@ -10,17 +10,22 @@
      <div class="card-header">
      <small id="emailHelp" class="form-text text-muted">Plann helps you organize your travel</small>
   </div>
-  
   <div class="card-body">
 
+<% if @myTrip.present? == false%>
+<small id="emailHelp" class="form-text text-muted">You haven't created any trip yet</small>
+<% end %>
 
 <% @myTrip.each do |trip| %>
 <div class="card text-white bg-success mb-3" style="max-width: 20rem;">
   <div class="card-header"><b> <%= trip.tripname %></b></div>
   <div class="card-body">
     <h5 class="card-title">
-    <%= trip.travel_duration %> days</h5>
-    <p class="card-text text-white">Budget <%= trip.tripbudget %></p>
+    <p class="card-text text-white">Travel duration: <%= trip.travel_duration %> days</p>
+    <p class="card-text text-white">Travel location: <%= trip.trip_location %></p>
+    <p class="card-text text-white">Budget: <%= trip.tripbudget %></p>
+    <p class="card-text text-white">Planned date: <%= trip.tripdate %></p>
+    <p class="card-text text-white">Travel mode: <%= trip.travel_mode %></p>
   </div>
   
 </div>

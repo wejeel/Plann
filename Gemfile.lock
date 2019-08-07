@@ -341,6 +341,7 @@ DEPENDENCIES
   coffee-rails (~> 4.2)
   devise (~> 4.2)
   dotenv
+  faraday
   google-cloud-storage
   google-cloud-vision
   grape

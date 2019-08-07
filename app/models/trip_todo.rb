@@ -1,0 +1,2 @@
+class TripTodo < ApplicationRecord
+end

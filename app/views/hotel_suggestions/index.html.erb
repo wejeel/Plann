@@ -1,7 +1,7 @@
   <div class="row" style="margin-top:20px">
         <div class="col-md-2"></div>
         <div class="col-md-8">
-          <center> <h2>Hotel suggestions</h2>    
+          <center> <h2>Plann suggests random luxury hotels in different destinations</h2>    
 
 <br>
   
@@ -13,11 +13,17 @@
   
   <div class="card-body">
 <div class="card text-white bg-info mb-3" style="max-width: 20rem;">
-  <div class="card-header"><b>Hotel de Diorule</b></div>
+  <div class="card-header"><b><%= @get_hotel_name %></b></div>
   <div class="card-body">
-    <h5 class="card-title">$250 per night</h5>
-    <p class="card-text text-white">Located at 45 Harthwire street, off Horshmire Road, London, UK.</p>
-    <p class="card-text text-white">5 stars</p>
+    <img src="<%=@get_image%>" style="max-width: 70%" />
+    <p class="card-text text-white"><%= @get_pernight %> </p>
+    <hr>
+<p class="card-text text-white">Location: <%= @get_country %>, <%= @get_city %> </p>
+<p class="card-text text-white">Buffet service available: <%= @get_buffet %> </p>
+<p class="card-text text-white">Hall available: <%= @get_hall %> </p>
+<p class="card-text text-white">Gym service available: <%= @get_gym %> </p>
+    
+    <p class="card-text text-white" style="size: 30px"><%= @get_rating %> stars</p>
   </div>
   
 </div>
