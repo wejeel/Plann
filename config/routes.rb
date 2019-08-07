@@ -5,7 +5,6 @@ Rails.application.routes.draw do
   resources :suggestions_box_hotels
   mount API::Base, at: "/"
   mount GrapeSwaggerRails::Engine, at: "/documentation"
-
   # mount GrapeSwaggerRails::Engine => '/swagger'
 
   resources :tasks

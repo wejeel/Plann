@@ -1,0 +1,40 @@
+
+<div class="row">
+    
+    <div class="col-md-2"></div>
+      <div class="col-md-8">
+          
+          <div class="jumbotron">
+              
+              <%=image_tag("expenseaseico.png", alt: "Example Image")%> 
+             
+               <br>
+                <h1>Welcome to <i>Plann</i> destination planner</h1>
+           
+              <br>
+               <% if user_signed_in? %>
+                <div class="actions form-group">
+                   <a> <%=link_to "View my trips", mytrips_path, class: 'btn btn-success' %> </a>
+                </div>
+               
+               
+               <% else %>
+                <div class="actions form-group">
+                   <a> <%=link_to "Create a new account", new_user_registration_path, class: 'btn btn-success' %> </a>
+                </div>
+              
+              <% end %>
+               
+               
+               
+          </div>
+          
+          
+          
+      </div>
+         <div class="col-md-2"></div>
+
+    
+</div>
+
+

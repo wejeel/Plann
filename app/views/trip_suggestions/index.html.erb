@@ -13,11 +13,12 @@
   
   <div class="card-body">
 <div class="card text-white bg-info mb-3" style="max-width: 20rem;">
-  <div class="card-header"><b>London trip</b></div>
+  <div class="card-header"><b><%= @get_name %></b></div>
   <div class="card-body">
-    <h5 class="card-title">Average stay is 7 days</h5>
-    <p class="card-text text-white">London is a great location for tourist who wish to explore the UK.</p>
-    <p class="card-text text-white">250 hotels</p>
+    <img src="<%=@get_image%>" style="max-width: 70%" />
+    <p class="card-text text-white"><%= @get_description %> </p>
+    <hr>
+    <p class="card-text text-white" style="size: 30px"><%= @get_rating %> stars</p>
   </div>
   
 </div>

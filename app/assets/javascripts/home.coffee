@@ -1,3 +1,16 @@
 # Place all the behaviors and hooks related to the matching controller here.
 # All this logic will automatically be available in application.js.
 # You can use CoffeeScript in this file: http://coffeescript.org/
+# $(() => {
+#   $('a[href*="#"]:not([href="#"])').click((e) => {
+#     const target = $(e.target.hash);
+
+#     if (target.length) {
+#       $('html, body').animate({
+#         scrollTop: target.offset().top
+#       }, 1000);
+
+#       return false;
+#     }
+#   });
+# });

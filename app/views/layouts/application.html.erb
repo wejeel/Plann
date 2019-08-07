@@ -52,6 +52,16 @@
        <!--<a class="nav-link" href="#">Budget planner</a> -->
        <a><%=link_to "Hotel suggestions", hotel_suggestions_path, class: 'nav-link' %> </a>
       </li>
+
+      <li class="nav-item">
+       <!--<a class="nav-link" href="#">Budget planner</a> -->
+       <a><%=link_to "Add Hotel", new_suggestions_box_hotel_path, class: 'nav-link' %> </a>
+      </li>
+
+      <li class="nav-item">
+       <!--<a class="nav-link" href="#">Budget planner</a> -->
+       <a><%=link_to "Add Trip", new_suggestions_box_trip_path, class: 'nav-link' %> </a>
+      </li>
       
         <li class="nav-item">
       <a><%=link_to current_user.email, edit_user_registration_path, class: 'nav-link' %> </a>
