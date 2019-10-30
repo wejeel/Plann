@@ -29,7 +29,7 @@ gem 'uglifier', '>= 1.3.0'
 gem 'google-cloud-storage'
 gem 'dotenv'
 gem 'google-cloud-vision'
-gem 'devise', '~> 4.2'
+gem 'devise', '~> 4.7'
 #gem "bootstrap_form", ">= 4.2.0"
 
 #gem "receipt_data_extraction"
